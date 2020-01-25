@@ -1,36 +1,19 @@
-// TASK #02:
-// Создать функцию которая высчитывает среднее арифметическое числовых элементов массива любой длины.
+let myArray = [99,'Hello World!',10,undefined,25,3,1,true,63,30,false,75,'name',39,80,41,null,136,'10',[2],{name: 'John'}];
 
-const array = [ 10, 'Kate', 50, true, 'Hello', -20, false, 70, 'John', -5, 40 ];
-
-// Get the digit elements amount:
-function getDigitElementsAmount() {
-    let digitElementsAmount = 0;
-    for (let i = 0; i < array.length; i++) {
-        if (typeof(array[i]) === 'number') {
-            digitElementsAmount++;
-        }
-    } 
-    return digitElementsAmount;
-}
-
-// Calculate the digit elements sum:
-function calcDigitElementsSum() {
-    let digitElementsSum = 0;
-    for (let i = 0; i < array.length; i++) {
-        if (typeof(array[i]) === 'number') {
-            digitElementsSum += array[i];
+function getAverageNumberOfArray(array) {
+    let sum = 0;
+    let numberAmount = 0;
+    let averageNumber;
+    for (let i = 0; i < array.length; i++) {       
+        if (typeof array[i] === 'number') {
+            sum += array[i];
+            numberAmount++;
+        } else {
+            continue;
         }
     }
-    return digitElementsSum;
+    averageNumber = sum / numberAmount;
+    return `The average number is ${averageNumber}`;
 }
 
-// Calculate the digit elements average:
-function calcDigitElementsAverage(sum, amount) {
-    let average = sum / amount;
-    document.write(average);
-}
-
-calcDigitElementsAverage(calcDigitElementsSum(), getDigitElementsAmount());
-
-
+document.write(getAverageNumberOfArray(myArray));

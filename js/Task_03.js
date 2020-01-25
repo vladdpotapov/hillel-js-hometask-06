@@ -3,3 +3,29 @@
 // В переменной знак может быть: +, -, *, /, %, ^. 
 // Вывести результат математического действия, указанного в переменной znak.
 
+function doMath(x, znak, y) {
+    let result;
+    switch(znak) {
+        case '+':
+            result = x + y;
+            break;
+        case '-':
+            result = x - y;
+            break;
+        case '*':
+            result = x * y;
+            break;
+        case '/':
+            result = x / y;
+            break;
+        case '%':
+            result = x % y;
+            break;  
+        case '':
+            result = x ** y;
+            break;   
+    }
+    return result;
+ }
+ let sum = (doMath(10,'+',5));
+ document.write(`Результат: ${sum}`);
