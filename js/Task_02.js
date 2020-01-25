@@ -1,19 +1,20 @@
-let myArray = [99,'Hello World!',10,undefined,25,3,1,true,63,30,false,75,'name',39,80,41,null,136,'10',[2],{name: 'John'}];
+// TASK #02:
+// Создать функцию которая высчитывает среднее арифметическое числовых элементов массива любой длины.
 
-function getAverageNumberOfArray(array) {
-    let sum = 0;
+let givenArray = [20, true, 'John', 5, {name: 'Bill'}, 157, undefined, -20, 30, false, 50, null, -70, 'Kate'];
+
+function calcNumberAverage(array) {
+    let numberSum = 0;
     let numberAmount = 0;
-    let averageNumber;
+    let numberAverage;
     for (let i = 0; i < array.length; i++) {       
         if (typeof array[i] === 'number') {
-            sum += array[i];
+            numberSum += array[i];
             numberAmount++;
-        } else {
-            continue;
         }
     }
-    averageNumber = sum / numberAmount;
-    return `The average number is ${averageNumber}`;
+    numberAverage = numberSum / numberAmount;
+    return `The average number: ${numberAverage}`;
 }
 
-document.write(getAverageNumberOfArray(myArray));
+document.write(calcNumberAverage(givenArray));
