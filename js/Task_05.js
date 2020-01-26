@@ -9,7 +9,9 @@ function remove(text, symbols) {
     for (let i = 0; i < string.length; i++) {
         for (let j = 0; j < sym.length; j++) {
             if (string[i] === sym[j]) {
-                string.splice(i, 1);
+                // string.splice(i, 1);
+                string[i] = string[i].replace(sym[j], ''); // 'replace' method returns the empty string
+
             }
         }
     }
@@ -19,4 +21,4 @@ function remove(text, symbols) {
     console.log(sym);
 }
 
-remove('bobo', 'o');
+remove('hello', 'ohe');
