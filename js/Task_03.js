@@ -25,7 +25,9 @@ function doMath(x, znak, y) {
             result = x ** y;
             break;   
     }
-    document.write(`The result: ${result}`);
+    return result;
 }
 
-doMath(10,'*',5);
+let res = doMath(10,'*',5);
+document.write(`The result: ${res}`);
+
